@@ -14,7 +14,7 @@ df = pd.read_csv(data_url)
 if 'Label' in df.columns:
     df.drop(columns=['Label'], inplace=True)
 
-st.title("🎬 Movie Recommendation Engine")
+st.title("Movie Recommendation Engine")
 
 # --- INPUT FORM ---
 st.subheader("Enter Movie Features")
@@ -46,6 +46,6 @@ if submitted:
     distances, indices = knn.kneighbors(input_vector)
 
     # Display recommended movies
-    st.subheader("🎥 Recommended Movies")
+    st.subheader("Recommended Movies")
     recommended_titles = df.iloc[indices[0], 1].values  # Movie Titles
     st.write(pd.DataFrame({"Recommended Movie Titles": recommended_titles}))
